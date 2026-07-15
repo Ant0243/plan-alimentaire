@@ -569,7 +569,10 @@ function renderWeek() {
 
     <div class="panel">
       <h2>Préparer la semaine</h2>
-      <p>La liste est calculée avec les sept journées ci-dessus et les produits déjà présents à la maison.</p>
+      <p>
+        La liste couvre toujours sept journées complètes. Les choix Simple / Complet
+        servent uniquement à organiser chaque journée et à estimer la réserve restante.
+      </p>
       <div class="button-row">
         <button class="button primary" id="generateShopping">Générer la liste de courses</button>
         <button class="button ghost" id="resetWeekProgress">Réinitialiser les repas cochés</button>
@@ -618,14 +621,11 @@ function parseQuantity(quantity) {
   return { value, unit };
 }
 
-function generateWeeklyShopping() {
+function aggregatePlans(planNames) {
   const aggregated = new Map();
 
-  DAY_KEYS.forEach((dayKey) => {
-    const day = state.days[dayKey];
-    const plan = PLANS[day.plan];
-
-    plan.meals.forEach((meal) => {
+  planNames.forEach((planName) => {
+    PLANS[planName].meals.forEach((meal) => {
       meal.foods.forEach((entry) => {
         const key = normalize(entry.name);
         const parsed = parseQuantity(entry.quantity);
@@ -635,12 +635,65 @@ function generateWeeklyShopping() {
           amounts: new Map()
         };
         const amountKey = parsed?.unit ?? entry.quantity;
-        current.amounts.set(amountKey, (current.amounts.get(amountKey) ?? 0) + (parsed?.value ?? 1));
+        current.amounts.set(
+          amountKey,
+          (current.amounts.get(amountKey) ?? 0) + (parsed?.value ?? 1)
+        );
         aggregated.set(key, current);
       });
     });
   });
 
+  return aggregated;
+}
+
+function formatAmounts(amounts) {
+  return [...amounts.entries()]
+    .map(([unit, value]) =>
+      unit === "unité"
+        ? `${Math.round(value)} portion(s)`
+        : `${Math.round(value)} ${unit}`
+    )
+    .join(" + ");
+}
+
+function calculateEstimatedReserve() {
+  const completeWeek = aggregatePlans(Array(7).fill("complete"));
+  const actualWeek = aggregatePlans(DAY_KEYS.map((dayKey) => state.days[dayKey].plan));
+  const reserve = [];
+
+  completeWeek.forEach((completeItem, key) => {
+    const actualItem = actualWeek.get(key);
+    const remainingAmounts = new Map();
+
+    completeItem.amounts.forEach((completeValue, unit) => {
+      const actualValue = actualItem?.amounts.get(unit) ?? 0;
+      const remaining = completeValue - actualValue;
+
+      if (remaining > 0.001) {
+        remainingAmounts.set(unit, remaining);
+      }
+    });
+
+    if (remainingAmounts.size) {
+      reserve.push({
+        name: completeItem.name,
+        category: completeItem.category,
+        quantity: formatAmounts(remainingAmounts)
+      });
+    }
+  });
+
+  return reserve.sort(
+    (left, right) =>
+      left.category.localeCompare(right.category, "fr") ||
+      left.name.localeCompare(right.name, "fr")
+  );
+}
+
+function generateWeeklyShopping() {
+  // Les courses couvrent toujours sept journées complètes.
+  const aggregated = aggregatePlans(Array(7).fill("complete"));
   const customItems = state.shopping.filter((item) => item.source === "Manuel");
   const generated = [];
 
@@ -648,17 +701,13 @@ function generateWeeklyShopping() {
     const pantryItem = findPantryItem(entry.name);
     if (pantryItem?.available) return;
 
-    const quantity = [...entry.amounts.entries()]
-      .map(([unit, value]) => unit === "unité" ? `${value} portion(s)` : `${Math.round(value)} ${unit}`)
-      .join(" + ");
-
     generated.push({
       id: createId(),
       name: entry.name,
-      quantity,
+      quantity: formatAmounts(entry.amounts),
       category: entry.category,
       bought: false,
-      source: "Semaine"
+      source: "7 jours complets"
     });
   });
 
@@ -670,14 +719,19 @@ function generateWeeklyShopping() {
 function renderShopping() {
   const items = state.shopping;
   const bought = items.filter((item) => item.bought).length;
+  const reserve = calculateEstimatedReserve();
+  const simpleDays = DAY_KEYS.filter((dayKey) => state.days[dayKey].plan === "simple").length;
   const categories = [...new Set(items.map((item) => item.category))].sort((a, b) => a.localeCompare(b, "fr"));
 
   document.querySelector("#route-shopping").innerHTML = `
     <div class="section-heading">
       <div>
-        <span class="eyebrow">Sept jours</span>
+        <span class="eyebrow">Base sécurisée</span>
         <h1>Liste de courses</h1>
-        <p>Quantités cumulées selon les plans choisis et les produits disponibles à la maison.</p>
+        <p>
+          Liste toujours calculée sur <strong>7 jours complets</strong>, après retrait
+          des produits cochés dans Maison.
+        </p>
       </div>
       <div class="button-row">
         <button class="button primary" id="regenerateShopping">Recalculer</button>
@@ -686,9 +740,17 @@ function renderShopping() {
     </div>
 
     <div class="shopping-summary">
-      <div class="summary-tile"><strong>${items.length}</strong><small>produits</small></div>
-      <div class="summary-tile"><strong>${bought}</strong><small>achetés</small></div>
-      <div class="summary-tile"><strong>${Math.max(items.length - bought, 0)}</strong><small>restants</small></div>
+      <div class="summary-tile"><strong>7</strong><small>jours complets couverts</small></div>
+      <div class="summary-tile"><strong>${items.length}</strong><small>produits à acheter</small></div>
+      <div class="summary-tile"><strong>${bought}</strong><small>déjà achetés</small></div>
+    </div>
+
+    <div class="notice">
+      <strong>Principe de calcul :</strong> même si tu choisis un petit déjeuner simple
+      certains matins, les courses restent prévues pour sept jours complets.
+      ${simpleDays
+        ? `${simpleDays} jour${simpleDays > 1 ? "s" : ""} simple${simpleDays > 1 ? "s" : ""} sélectionné${simpleDays > 1 ? "s" : ""} cette semaine : le surplus estimé apparaît plus bas.`
+        : "Aucun jour simple sélectionné actuellement : aucune réserve liée au petit déjeuner n’est estimée."}
     </div>
 
     <div class="panel">
@@ -717,6 +779,33 @@ function renderShopping() {
         <button class="button ghost" id="removeBought">Retirer les produits achetés</button>
         <button class="button danger" id="clearShopping">Vider la liste</button>
       </div>
+    </div>
+
+    <div class="section-heading">
+      <div>
+        <h2>Réserve estimée</h2>
+        <p>
+          Différence théorique entre sept jours complets et les choix Simple / Complet
+          actuellement affichés dans ta semaine.
+        </p>
+      </div>
+    </div>
+
+    <div class="panel">
+      ${reserve.length
+        ? `<div class="list">
+            ${reserve.map((item) => `
+              <div class="list-item">
+                <span>↺</span>
+                <span class="item-label">
+                  <strong>${escapeHtml(item.name)}</strong>
+                  <small>${escapeHtml(item.quantity)} · ${escapeHtml(item.category)}</small>
+                </span>
+                <span></span>
+              </div>
+            `).join("")}
+          </div>`
+        : renderEmpty("Aucune réserve estimée : les sept jours sont actuellement configurés en plan complet.")}
     </div>
   `;
 
