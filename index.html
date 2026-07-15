@@ -8,7 +8,7 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./assets/icon-192.png">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=4">
   <title>Mon plan alimentaire</title>
 </head>
 <body>
@@ -34,6 +34,94 @@
     </nav>
 
     <div class="header-actions">
+      <span id="syncIndicator" class="sync-indicator">Local</span>
+      <button id="installButton" class="icon-button" hidden aria-label="Installer l’application">↓</button>
+      <button id="accountButton" class="avatar-button" aria-label="Compte">A</button>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section id="route-today" class="route active"></section>
+    <section id="route-week" class="route"></section>
+    <section id="route-shopping" class="route"></section>
+    <section id="route-pantry" class="route"></section>
+    <section id="route-recipes" class="route"></section>
+  </main>
+
+  <nav class="mobile-nav" aria-label="Navigation mobile">
+    <button class="mobile-nav-button active" data-route="today"><span>⌂</span>Aujourd’hui</button>
+    <button class="mobile-nav-button" data-route="week"><span>▦</span>Semaine</button>
+    <button class="mobile-nav-button" data-route="shopping"><span>✓</span>Courses</button>
+    <button class="mobile-nav-button" data-route="pantry"><span>◇</span>Maison</button>
+    <button class="mobile-nav-button" data-route="recipes"><span>◌</span>Recettes</button>
+  </nav>
+
+  <dialog id="accountDialog" class="dialog">
+    <form method="dialog" class="dialog-card" id="authForm">
+      <div class="dialog-heading">
+        <div>
+          <span class="eyebrow">Synchronisation privée</span>
+          <h2 id="authTitle">Mon compte</h2>
+          <p id="authDescription">Connecte-toi avec le même compte sur ton ordinateur et ton téléphone.</p>
+        </div>
+        <button class="close-button" value="cancel" aria-label="Fermer">×</button>
+      </div>
+
+      <div id="signedOutPanel">
+        <label>
+          Adresse e-mail
+          <input id="authEmail" type="email" autocomplete="email" required>
+        </label>
+        <label>
+          Mot de passe
+          <input id="authPassword" type="password" autocomplete="current-password" minlength="8" required>
+        </label>
+        <div id="authMessage" class="form-message" aria-live="polite"></div>
+        <button id="signInButton" class="button primary full" type="button">Se connecter</button>
+        <button id="signUpButton" class="button secondary full" type="button">Créer mon compte</button>
+      </div>
+
+      <div id="signedInPanel" hidden>
+        <div class="account-card">
+          <span class="account-avatar">✓</span>
+          <div>
+            <strong id="accountEmail"></strong>
+            <small>Données synchronisées avec Supabase</small>
+          </div>
+        </div>
+        <button id="syncNowButton" class="button secondary full" type="button">Synchroniser maintenant</button>
+        <button id="signOutButton" class="button danger full" type="button">Se déconnecter</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="recipeDialog" class="dialog">
+    <article class="dialog-card recipe-dialog-card">
+      <div class="dialog-heading">
+        <div>
+          <span id="recipeDialogTag" class="eyebrow">Recette</span>
+          <h2 id="recipeDialogTitle"></h2>
+          <p id="recipeDialogDescription"></p>
+        </div>
+        <button id="closeRecipeButton" class="close-button" aria-label="Fermer">×</button>
+      </div>
+      <div id="recipeDialogContent"></div>
+    </article>
+  </dialog>
+
+  <template id="emptyTemplate">
+    <div class="empty-state">
+      <span>✦</span>
+      <h3>Rien ici pour le moment</h3>
+      <p></p>
+    </div>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./config.js?v=4"></script>
+  <script src="./app.js?v=4"></script>
+</body>
+</html>
       <span id="syncIndicator" class="sync-indicator">Local</span>
       <button id="installButton" class="icon-button" hidden aria-label="Installer l’application">↓</button>
       <button id="accountButton" class="avatar-button" aria-label="Compte">A</button>
