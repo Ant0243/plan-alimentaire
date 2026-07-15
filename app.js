@@ -15,25 +15,1236 @@ function food(quantity, name, category, alternatives = []) {
 
 const PLANS = {
   simple: {
-    label: "Petit dÃ©jeuner simple",
+    label: "Petit d\u00E9jeuner simple",
     meals: [
       {
         id: "breakfast",
-        title: "Petit dÃ©jeuner",
-        icon: "â˜€ï¸",
+        title: "Petit d\u00E9jeuner",
+        icon: "\u2600\uFE0F",
         foods: [
           food("125 g", "Yaourt nature", "Produits frais", ["90 g de fromage blanc nature 3 % MG"]),
-          food("5 g", "Miel", "Ã‰picerie", ["5 g de sucre", "5 g de sirop dâ€™agave"]),
-          food("150 g", "Fruit cru", "Fruits et lÃ©gumes")
+          food("5 g", "Miel", "\u00C9picerie", ["5 g de sucre", "5 g de sirop d\u2019agave"]),
+          food("150 g", "Fruit cru", "Fruits et l\u00E9gumes")
         ]
       },
       {
         id: "lunch",
-        title: "DÃ©jeuner",
-        icon: "ðŸ¥—",
+        title: "D\u00E9jeuner",
+        icon: "\uD83E\uDD57",
         foods: [
-          food("150 g", "Viande cuite", "Viandes et poissons", ["190 g de poisson", "75 g de cÃ©rÃ©ales-lÃ©gumineuses crues", "205 g dâ€™Å“ufs durs"]),
-          food("90 g", "PÃ¢tes complÃ¨tes sÃ¨ches", "FÃ©culents", ["340 g de pommes de terre cuites", "90 g de riz complet cru"]),
+          food("150 g", "Viande cuite", "Viandes et poissons", ["190 g de poisson", "75 g de c\u00E9r\u00E9ales-l\u00E9gumineuses crues", "205 g d\u2019\u0153ufs durs"]),
+          food("90 g", "P\u00E2tes compl\u00E8tes s\u00E8ches", "F\u00E9culents", ["340 g de pommes de terre cuites", "90 g de riz complet cru"]),
+          food("150 g", "L\u00E9gumes", "Fruits et l\u00E9gumes"),
+          food("20 g", "Huile d\u2019olive", "\u00C9picerie"),
+          food("40 g", "Fromage", "Produits frais"),
+          food("80 g", "Pain de mie complet", "Boulangerie"),
+          food("125 g", "Yaourt nature", "Produits frais"),
+          food("5 g", "Miel", "\u00C9picerie"),
+          food("150 g", "Fruit", "Fruits et l\u00E9gumes")
+        ]
+      },
+      {
+        id: "snack",
+        title: "Collation",
+        icon: "\uD83C\uDF4E",
+        foods: [
+          food("100 g", "Fruit cru", "Fruits et l\u00E9gumes", ["105 g de compote sans sucres ajout\u00E9s"]),
+          food("80 g", "Pain complet", "Boulangerie"),
+          food("10 g", "Beurre doux", "Produits frais", ["10 g de beurre de cacahu\u00E8te"]),
+          food("20 g", "Miel", "\u00C9picerie", ["25 g de confiture"])
+        ]
+      },
+      {
+        id: "dinner",
+        title: "D\u00EEner",
+        icon: "\uD83C\uDF19",
+        foods: [
+          food("120 g", "Viande cuite", "Viandes et poissons", ["165 g d\u2019\u0153ufs durs", "150 g de poisson", "60 g de c\u00E9r\u00E9ales-l\u00E9gumineuses crues"]),
+          food("80 g", "P\u00E2tes compl\u00E8tes s\u00E8ches", "F\u00E9culents", ["305 g de pommes de terre cuites", "80 g de riz complet cru"]),
+          food("150 g", "L\u00E9gumes", "Fruits et l\u00E9gumes"),
+          food("20 g", "Huile d\u2019olive", "\u00C9picerie"),
+          food("40 g", "Fromage", "Produits frais"),
+          food("150 g", "Fruit", "Fruits et l\u00E9gumes"),
+          food("80 g", "Pain de mie complet", "Boulangerie")
+        ]
+      },
+      {
+        id: "extras",
+        title: "Dans la journ\u00E9e",
+        icon: "\u2728",
+        foods: [
+          food("30 g", "Chocolat noir 70 %", "\u00C9picerie"),
+          food("30 g", "Noix", "\u00C9picerie", ["20 g d\u2019amandes", "20 g de noisettes", "20 g de noix de cajou"])
+        ]
+      }
+    ]
+  },
+  complete: {
+    label: "Petit d\u00E9jeuner complet",
+    meals: [
+      {
+        id: "breakfast",
+        title: "Petit d\u00E9jeuner",
+        icon: "\u2600\uFE0F",
+        foods: [
+          food("200 g", "Lait demi-\u00E9cr\u00E9m\u00E9", "Produits frais"),
+          food("125 g", "Yaourt nature", "Produits frais", ["90 g de fromage blanc nature 3 % MG"]),
+          food("5 g", "Miel", "\u00C9picerie", ["5 g de sucre", "5 g de sirop d\u2019agave"]),
+          food("80 g", "Pain complet", "Boulangerie", ["60 g de flocons d\u2019avoine", "55 g de muesli"]),
+          food("10 g", "Beurre doux", "Produits frais"),
+          food("20 g", "Confiture", "\u00C9picerie")
+        ]
+      },
+      {
+        id: "snack-am",
+        title: "Collation du matin",
+        icon: "\uD83C\uDF4F",
+        foods: [
+          food("100 g", "Fruit cru", "Fruits et l\u00E9gumes", ["105 g de compote sans sucres ajout\u00E9s"]),
+          food("40 g", "Pain de mie complet", "Boulangerie", ["65 g de barre c\u00E9r\u00E9ali\u00E8re prot\u00E9in\u00E9e"]),
+          food("10 g", "Beurre doux", "Produits frais", ["10 g de beurre de cacahu\u00E8te"]),
+          food("10 g", "Miel", "\u00C9picerie", ["15 g de confiture"])
+        ]
+      },
+      {
+        id: "lunch",
+        title: "D\u00E9jeuner",
+        icon: "\uD83E\uDD57",
+        foods: [
+          food("150 g", "Viande cuite", "Viandes et poissons", ["190 g de poisson", "75 g de c\u00E9r\u00E9ales-l\u00E9gumineuses crues", "205 g d\u2019\u0153ufs durs"]),
+          food("80 g", "P\u00E2tes compl\u00E8tes s\u00E8ches", "F\u00E9culents", ["305 g de pommes de terre cuites", "80 g de riz complet cru"]),
+          food("150 g", "L\u00E9gumes", "Fruits et l\u00E9gumes"),
+          food("20 g", "Huile d\u2019olive", "\u00C9picerie"),
+          food("30 g", "Fromage", "Produits frais"),
+          food("40 g", "Pain de mie complet", "Boulangerie"),
+          food("125 g", "Yaourt nature", "Produits frais"),
+          food("5 g", "Miel", "\u00C9picerie"),
+          food("150 g", "Fruit", "Fruits et l\u00E9gumes")
+        ]
+      },
+      {
+        id: "snack-pm",
+        title: "Collation de l\u2019apr\u00E8s-midi",
+        icon: "\uD83E\uDD6A",
+        foods: [
+          food("100 g", "Fruit cru", "Fruits et l\u00E9gumes", ["105 g de compote sans sucres ajout\u00E9s"]),
+          food("80 g", "Pain complet", "Boulangerie"),
+          food("10 g", "Beurre doux", "Produits frais", ["10 g de beurre de cacahu\u00E8te"]),
+          food("20 g", "Miel", "\u00C9picerie", ["25 g de confiture"])
+        ]
+      },
+      {
+        id: "dinner",
+        title: "D\u00EEner",
+        icon: "\uD83C\uDF19",
+        foods: [
+          food("120 g", "Viande cuite", "Viandes et poissons", ["165 g d\u2019\u0153ufs durs", "150 g de poisson", "60 g de c\u00E9r\u00E9ales-l\u00E9gumineuses crues"]),
+          food("70 g", "P\u00E2tes compl\u00E8tes s\u00E8ches", "F\u00E9culents", ["265 g de pommes de terre cuites", "70 g de riz complet cru"]),
+          food("150 g", "L\u00E9gumes", "Fruits et l\u00E9gumes"),
+          food("20 g", "Huile d\u2019olive", "\u00C9picerie"),
+          food("30 g", "Fromage", "Produits frais"),
+          food("150 g", "Fruit", "Fruits et l\u00E9gumes"),
+          food("40 g", "Pain de mie complet", "Boulangerie")
+        ]
+      },
+      {
+        id: "extras",
+        title: "Dans la journ\u00E9e",
+        icon: "\u2728",
+        foods: [
+          food("30 g", "Chocolat noir 70 %", "\u00C9picerie"),
+          food("30 g", "Noix", "\u00C9picerie", ["20 g d\u2019amandes", "20 g de noisettes", "20 g de noix de cajou"])
+        ]
+      }
+    ]
+  }
+};
+
+const RECIPES = [
+  {
+    id: "bowl",
+    emoji: "\uD83E\uDD63",
+    tag: "Petit d\u00E9jeuner",
+    title: "Bowl yaourt, fruit et miel",
+    description: "Une pr\u00E9paration fra\u00EEche pr\u00EAte en cinq minutes.",
+    ingredients: ["125 g de yaourt nature", "150 g de fruit", "5 g de miel"],
+    steps: ["Couper le fruit.", "Verser le yaourt dans un bol.", "Ajouter le fruit puis le miel."]
+  },
+  {
+    id: "oats",
+    emoji: "\uD83C\uDF3E",
+    tag: "Petit d\u00E9jeuner complet",
+    title: "Overnight oats",
+    description: "Pr\u00E9par\u00E9 la veille pour gagner du temps le matin.",
+    ingredients: ["60 g de flocons d\u2019avoine", "200 g de lait", "125 g de yaourt", "5 g de miel"],
+    steps: ["M\u00E9langer les ingr\u00E9dients dans un bocal.", "Fermer et r\u00E9server au frais toute la nuit.", "Remuer avant de manger."]
+  },
+  {
+    id: "chicken-pasta",
+    emoji: "\uD83C\uDF5D",
+    tag: "D\u00E9jeuner",
+    title: "Poulet et p\u00E2tes compl\u00E8tes",
+    description: "Un plat simple avec l\u00E9gumes et huile d\u2019olive.",
+    ingredients: ["P\u00E2tes selon le plan", "150 g de poulet cuit", "150 g de l\u00E9gumes", "20 g d\u2019huile d\u2019olive"],
+    steps: ["Cuire les p\u00E2tes.", "Cuire les l\u00E9gumes.", "Ajouter le poulet.", "Assembler avec l\u2019huile hors du feu."]
+  },
+  {
+    id: "fish-rice",
+    emoji: "\uD83C\uDF5A",
+    tag: "D\u00EEner",
+    title: "Poisson, riz et l\u00E9gumes",
+    description: "Une assiette compl\u00E8te et facile \u00E0 pr\u00E9parer.",
+    ingredients: ["150 g de poisson", "Riz selon le plan", "150 g de l\u00E9gumes", "20 g d\u2019huile d\u2019olive"],
+    steps: ["Cuire le riz.", "Cuire le poisson.", "Cuire les l\u00E9gumes.", "Assembler et assaisonner."]
+  },
+  {
+    id: "toast",
+    emoji: "\uD83C\uDF5E",
+    tag: "Collation",
+    title: "Tartines fruit\u00E9es",
+    description: "Une collation rapide \u00E0 emporter.",
+    ingredients: ["Pain selon le plan", "Beurre ou beurre de cacahu\u00E8te", "Miel ou confiture", "Fruit ou compote"],
+    steps: ["Faire griller le pain.", "Ajouter la mati\u00E8re grasse choisie.", "Ajouter le miel ou la confiture.", "Servir avec le fruit."]
+  },
+  {
+    id: "potato-eggs",
+    emoji: "\uD83E\uDD54",
+    tag: "Alternative",
+    title: "Pommes de terre et \u0153ufs",
+    description: "Une alternative pratique \u00E0 la viande.",
+    ingredients: ["Pommes de terre selon le plan", "\u0152ufs selon le plan", "150 g de l\u00E9gumes", "20 g d\u2019huile d\u2019olive"],
+    steps: ["Cuire les pommes de terre.", "Cuire les \u0153ufs durs.", "Pr\u00E9parer les l\u00E9gumes.", "Assembler avec l\u2019huile."]
+  }
+];
+
+function cleanCatalogName(value) {
+  return value
+    .replace(/^\s*\d+(?:[.,]\d+)?\s*(?:g|kg|ml|cl|l)\s+(?:de |d\u2019|d')?/i, "")
+    .trim()
+    .replace(/^./, (letter) => letter.toUpperCase());
+}
+
+function buildPantryCatalog() {
+  const catalog = new Map();
+
+  Object.values(PLANS).forEach((plan) => {
+    plan.meals.forEach((meal) => {
+      meal.foods.forEach((entry) => {
+        const names = [entry.name, ...entry.alternatives.map(cleanCatalogName)];
+
+        names.forEach((name) => {
+          const cleanName = cleanCatalogName(name);
+          const key = normalize(cleanName);
+
+          if (!cleanName || catalog.has(key)) return;
+
+          catalog.set(key, {
+            id: `catalog-${key.replaceAll(" ", "-")}`,
+            name: cleanName,
+            category: entry.category,
+            available: false,
+            catalog: true
+          });
+        });
+      });
+    });
+  });
+
+  return [...catalog.values()].sort(
+    (left, right) =>
+      left.category.localeCompare(right.category, "fr") ||
+      left.name.localeCompare(right.name, "fr")
+  );
+}
+
+function ensurePantryCatalog(sourceState) {
+  const nextState = sourceState ?? createInitialState();
+  const existingPantry = Array.isArray(nextState.pantry) ? nextState.pantry : [];
+  const existingByName = new Map(existingPantry.map((item) => [normalize(item.name), item]));
+
+  buildPantryCatalog().forEach((catalogItem) => {
+    const existing = existingByName.get(normalize(catalogItem.name));
+
+    if (existing) {
+      existing.category ??= catalogItem.category;
+      existing.catalog ??= true;
+      return;
+    }
+
+    existingPantry.push(catalogItem);
+  });
+
+  nextState.pantry = existingPantry;
+  nextState.version = 3;
+  return nextState;
+}
+
+function createInitialState() {
+  return {
+    version: 3,
+    weekStart: toIsoDate(startOfWeek(new Date())),
+    days: Object.fromEntries(DAY_KEYS.map((key) => [key, { plan: "complete", completed: [] }])),
+    pantry: buildPantryCatalog(),
+    shopping: [],
+    settings: {
+      assumeEmptyPantry: true,
+      includeCompletedDays: true
+    },
+    updatedAt: new Date().toISOString()
+  };
+}
+
+let state = loadLocalState();
+let currentUser = null;
+let syncTimer = null;
+let deferredInstallPrompt = null;
+
+function loadLocalState() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    return parsed ? ensurePantryCatalog(parsed) : createInitialState();
+  } catch {
+    return createInitialState();
+  }
+}
+
+function saveLocalState({ queueSync = true } = {}) {
+  state.updatedAt = new Date().toISOString();
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  if (queueSync) {
+    localStorage.setItem(SYNC_QUEUE_KEY, "1");
+    scheduleSync();
+  }
+}
+
+function startOfWeek(date) {
+  const result = new Date(date);
+  const day = result.getDay() || 7;
+  result.setHours(12, 0, 0, 0);
+  result.setDate(result.getDate() - day + 1);
+  return result;
+}
+
+function addDays(date, amount) {
+  const result = new Date(date);
+  result.setDate(result.getDate() + amount);
+  return result;
+}
+
+function toIsoDate(date) {
+  return date.toISOString().slice(0, 10);
+}
+
+function dateFromIso(value) {
+  return new Date(`${value}T12:00:00`);
+}
+
+function getDayInfo(index) {
+  const date = addDays(dateFromIso(state.weekStart), index);
+  return {
+    key: DAY_KEYS[index],
+    date,
+    label: new Intl.DateTimeFormat("fr-FR", { weekday: "long" }).format(date),
+    shortDate: new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "short" }).format(date),
+    isToday: toIsoDate(date) === toIsoDate(new Date())
+  };
+}
+
+function getTodayIndex() {
+  const today = toIsoDate(new Date());
+  const index = DAY_KEYS.findIndex((_, dayIndex) => toIsoDate(addDays(dateFromIso(state.weekStart), dayIndex)) === today);
+  return index >= 0 ? index : 0;
+}
+
+function normalize(value) {
+  return value
+    .toLocaleLowerCase("fr")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function createId() {
+  return crypto.randomUUID();
+}
+
+function showRoute(routeName) {
+  document.querySelectorAll(".route").forEach((route) => {
+    route.classList.toggle("active", route.id === `route-${routeName}`);
+  });
+  document.querySelectorAll("[data-route]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.route === routeName);
+  });
+  if (location.hash !== `#${routeName}`) history.replaceState(null, "", `#${routeName}`);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function renderApp() {
+  renderToday();
+  renderWeek();
+  renderShopping();
+  renderPantry();
+  renderRecipes();
+  renderSyncStatus();
+}
+
+function renderToday() {
+  const index = getTodayIndex();
+  const info = getDayInfo(index);
+  const dayState = state.days[info.key];
+  const plan = PLANS[dayState.plan];
+  const completedCount = dayState.completed.length;
+  const percent = Math.round((completedCount / plan.meals.length) * 100);
+
+  document.querySelector("#route-today").innerHTML = `
+    <section class="hero">
+      <article class="hero-main">
+        <span class="eyebrow">${escapeHtml(info.label)} ${escapeHtml(info.shortDate)}</span>
+        <h1>Ton plan,<br>sans charge mentale.</h1>
+        <p class="hero-copy">
+          Consulte les repas du jour, coche ce qui est fait et indique imm\u00E9diatement
+          les produits manquants \u00E0 la maison.
+        </p>
+      </article>
+      <aside class="hero-side">
+        <div>
+          <small>Progression du jour</small>
+          <div class="big-number">${completedCount}<small> / ${plan.meals.length}</small></div>
+          <div class="progress"><span style="width:${percent}%"></span></div>
+        </div>
+        <p>${percent === 100 ? "Journ\u00E9e termin\u00E9e. Beau travail." : `${percent} % du programme r\u00E9alis\u00E9.`}</p>
+      </aside>
+    </section>
+
+    <div class="section-heading">
+      <div>
+        <h2>Programme d\u2019aujourd\u2019hui</h2>
+        <p>Le choix modifie automatiquement les quantit\u00E9s de la semaine.</p>
+      </div>
+      ${renderPlanChoice(info.key, dayState.plan)}
+    </div>
+
+    <div class="meal-list">
+      ${plan.meals.map((meal) => renderMealCard(info.key, meal, dayState.completed.includes(meal.id))).join("")}
+    </div>
+
+    <div class="notice">
+      Le plan pr\u00E9voit un repas plaisir par semaine. Les recettes propos\u00E9es sont des id\u00E9es
+      d\u2019organisation ; les consignes de ton di\u00E9t\u00E9ticien restent prioritaires.
+    </div>
+  `;
+
+  bindPlanChoice(document.querySelector("#route-today"));
+  bindMealActions(document.querySelector("#route-today"));
+}
+
+function renderPlanChoice(dayKey, selected) {
+  return `
+    <div class="plan-choice" data-day="${dayKey}">
+      <button class="${selected === "simple" ? "active" : ""}" data-plan="simple">Simple</button>
+      <button class="${selected === "complete" ? "active" : ""}" data-plan="complete">Complet</button>
+    </div>
+  `;
+}
+
+function renderMealCard(dayKey, meal, completed) {
+  return `
+    <article class="meal-card">
+      <div class="meal-heading">
+        <div class="meal-name">
+          <span>${meal.icon}</span>
+          <div>
+            <h3>${escapeHtml(meal.title)}</h3>
+            <small>${meal.foods.length} \u00E9l\u00E9ments</small>
+          </div>
+        </div>
+        <button class="done-button ${completed ? "done" : ""}" data-complete-meal="${meal.id}" data-day="${dayKey}">
+          ${completed ? "\u2713 Fait" : "Marquer fait"}
+        </button>
+      </div>
+      <div class="food-list">
+        ${meal.foods.map((entry) => `
+          <div class="food-row">
+            <span class="quantity">${escapeHtml(entry.quantity)}</span>
+            <span class="food-title">
+              ${escapeHtml(entry.name)}
+              ${entry.alternatives.length ? `<small class="food-alternatives">ou ${entry.alternatives.map(escapeHtml).join(" \u00B7 ou ")}</small>` : ""}
+            </span>
+            <button class="mini-button" data-missing-food="${escapeHtml(entry.name)}" data-category="${escapeHtml(entry.category)}">
+              Je n\u2019en ai plus
+            </button>
+          </div>
+        `).join("")}
+      </div>
+    </article>
+  `;
+}
+
+function bindPlanChoice(scope) {
+  scope.querySelectorAll(".plan-choice button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const dayKey = button.closest(".plan-choice").dataset.day;
+      state.days[dayKey].plan = button.dataset.plan;
+      state.days[dayKey].completed = [];
+      saveLocalState();
+      renderApp();
+    });
+  });
+}
+
+function bindMealActions(scope) {
+  scope.querySelectorAll("[data-complete-meal]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const day = state.days[button.dataset.day];
+      const mealId = button.dataset.completeMeal;
+      day.completed = day.completed.includes(mealId)
+        ? day.completed.filter((id) => id !== mealId)
+        : [...day.completed, mealId];
+      saveLocalState();
+      renderApp();
+    });
+  });
+
+  scope.querySelectorAll("[data-missing-food]").forEach((button) => {
+    button.addEventListener("click", () => {
+      setPantryItem(button.dataset.missingFood, false);
+      addShoppingItem(button.dataset.missingFood, button.dataset.category, "Produit manquant");
+      saveLocalState();
+      renderApp();
+      showRoute("shopping");
+    });
+  });
+}
+
+function renderWeek() {
+  const weekStart = dateFromIso(state.weekStart);
+  const weekEnd = addDays(weekStart, 6);
+
+  document.querySelector("#route-week").innerHTML = `
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">Planning sur sept jours</span>
+        <h1>Ma semaine</h1>
+        <p>Du ${formatDate(weekStart)} au ${formatDate(weekEnd)}.</p>
+      </div>
+      <div class="button-row">
+        <button class="button ghost" id="previousWeek">\u2190 Semaine pr\u00E9c\u00E9dente</button>
+        <button class="button secondary" id="currentWeek">Cette semaine</button>
+        <button class="button ghost" id="nextWeek">Semaine suivante \u2192</button>
+      </div>
+    </div>
+
+    <div class="week-grid">
+      ${DAY_KEYS.map((dayKey, index) => {
+        const info = getDayInfo(index);
+        const day = state.days[dayKey];
+        const plan = PLANS[day.plan];
+        return `
+          <article class="day-card ${info.isToday ? "today" : ""}">
+            <h3>${escapeHtml(info.label)}</h3>
+            <span class="day-date">${escapeHtml(info.shortDate)}</span>
+            ${renderPlanChoice(dayKey, day.plan)}
+            <div class="day-meals">
+              ${plan.meals.map((meal) => `
+                <div class="day-meal ${day.completed.includes(meal.id) ? "completed" : ""}">
+                  <span>${meal.icon} ${escapeHtml(meal.title)}</span>
+                  <span>${day.completed.includes(meal.id) ? "\u2713" : ""}</span>
+                </div>
+              `).join("")}
+            </div>
+          </article>
+        `;
+      }).join("")}
+    </div>
+
+    <div class="panel">
+      <h2>Pr\u00E9parer la semaine</h2>
+      <p>La liste est calcul\u00E9e avec les sept journ\u00E9es ci-dessus et les produits d\u00E9j\u00E0 pr\u00E9sents \u00E0 la maison.</p>
+      <div class="button-row">
+        <button class="button primary" id="generateShopping">G\u00E9n\u00E9rer la liste de courses</button>
+        <button class="button ghost" id="resetWeekProgress">R\u00E9initialiser les repas coch\u00E9s</button>
+      </div>
+    </div>
+  `;
+
+  bindPlanChoice(document.querySelector("#route-week"));
+  document.querySelector("#previousWeek").addEventListener("click", () => shiftWeek(-7));
+  document.querySelector("#nextWeek").addEventListener("click", () => shiftWeek(7));
+  document.querySelector("#currentWeek").addEventListener("click", () => {
+    state.weekStart = toIsoDate(startOfWeek(new Date()));
+    saveLocalState();
+    renderApp();
+  });
+  document.querySelector("#generateShopping").addEventListener("click", () => {
+    generateWeeklyShopping();
+    showRoute("shopping");
+  });
+  document.querySelector("#resetWeekProgress").addEventListener("click", () => {
+    DAY_KEYS.forEach((dayKey) => { state.days[dayKey].completed = []; });
+    saveLocalState();
+    renderApp();
+  });
+}
+
+function shiftWeek(days) {
+  state.weekStart = toIsoDate(addDays(dateFromIso(state.weekStart), days));
+  DAY_KEYS.forEach((dayKey) => { state.days[dayKey].completed = []; });
+  saveLocalState();
+  renderApp();
+}
+
+function formatDate(date) {
+  return new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long" }).format(date);
+}
+
+function parseQuantity(quantity) {
+  const match = quantity.replace(",", ".").match(/^(\d+(?:\.\d+)?)\s*(g|kg|ml|cl|l)?$/i);
+  if (!match) return null;
+  let value = Number(match[1]);
+  const unit = (match[2] || "unit\u00E9").toLowerCase();
+  if (unit === "kg") return { value: value * 1000, unit: "g" };
+  if (unit === "l") return { value: value * 1000, unit: "ml" };
+  if (unit === "cl") return { value: value * 10, unit: "ml" };
+  return { value, unit };
+}
+
+function generateWeeklyShopping() {
+  const aggregated = new Map();
+
+  DAY_KEYS.forEach((dayKey) => {
+    const day = state.days[dayKey];
+    const plan = PLANS[day.plan];
+
+    plan.meals.forEach((meal) => {
+      meal.foods.forEach((entry) => {
+        const key = normalize(entry.name);
+        const parsed = parseQuantity(entry.quantity);
+        const current = aggregated.get(key) ?? {
+          name: entry.name,
+          category: entry.category,
+          amounts: new Map()
+        };
+        const amountKey = parsed?.unit ?? entry.quantity;
+        current.amounts.set(amountKey, (current.amounts.get(amountKey) ?? 0) + (parsed?.value ?? 1));
+        aggregated.set(key, current);
+      });
+    });
+  });
+
+  const customItems = state.shopping.filter((item) => item.source === "Manuel");
+  const generated = [];
+
+  aggregated.forEach((entry) => {
+    const pantryItem = findPantryItem(entry.name);
+    if (pantryItem?.available) return;
+
+    const quantity = [...entry.amounts.entries()]
+      .map(([unit, value]) => unit === "unit\u00E9" ? `${value} portion(s)` : `${Math.round(value)} ${unit}`)
+      .join(" + ");
+
+    generated.push({
+      id: createId(),
+      name: entry.name,
+      quantity,
+      category: entry.category,
+      bought: false,
+      source: "Semaine"
+    });
+  });
+
+  state.shopping = [...customItems, ...generated];
+  saveLocalState();
+  renderApp();
+}
+
+function renderShopping() {
+  const items = state.shopping;
+  const bought = items.filter((item) => item.bought).length;
+  const categories = [...new Set(items.map((item) => item.category))].sort((a, b) => a.localeCompare(b, "fr"));
+
+  document.querySelector("#route-shopping").innerHTML = `
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">Sept jours</span>
+        <h1>Liste de courses</h1>
+        <p>Quantit\u00E9s cumul\u00E9es selon les plans choisis et les produits disponibles \u00E0 la maison.</p>
+      </div>
+      <div class="button-row">
+        <button class="button primary" id="regenerateShopping">Recalculer</button>
+        <button class="button ghost" id="shareShopping">Partager</button>
+      </div>
+    </div>
+
+    <div class="shopping-summary">
+      <div class="summary-tile"><strong>${items.length}</strong><small>produits</small></div>
+      <div class="summary-tile"><strong>${bought}</strong><small>achet\u00E9s</small></div>
+      <div class="summary-tile"><strong>${Math.max(items.length - bought, 0)}</strong><small>restants</small></div>
+    </div>
+
+    <div class="panel">
+      <form class="input-row" id="shoppingForm">
+        <input class="input" id="shoppingInput" placeholder="Ajouter un produit\u2026" autocomplete="off">
+        <button class="button secondary" type="submit">Ajouter</button>
+      </form>
+
+      <div class="list" id="shoppingList">
+        ${items.length ? categories.map((category) => `
+          <div class="category-heading">${escapeHtml(category)}</div>
+          ${items.filter((item) => item.category === category).map((item) => `
+            <div class="list-item ${item.bought ? "checked" : ""}">
+              <input type="checkbox" data-shopping-check="${item.id}" ${item.bought ? "checked" : ""}>
+              <span class="item-label">
+                <strong>${escapeHtml(item.name)}</strong>
+                <small>${escapeHtml(item.quantity || item.source)}</small>
+              </span>
+              <button class="mini-button" data-shopping-delete="${item.id}">\u00D7</button>
+            </div>
+          `).join("")}
+        `).join("") : renderEmpty("G\u00E9n\u00E8re la liste depuis la page Semaine ou ajoute un produit manuellement.")}
+      </div>
+
+      <div class="button-row" style="margin-top:16px">
+        <button class="button ghost" id="removeBought">Retirer les produits achet\u00E9s</button>
+        <button class="button danger" id="clearShopping">Vider la liste</button>
+      </div>
+    </div>
+  `;
+
+  document.querySelector("#regenerateShopping").addEventListener("click", generateWeeklyShopping);
+  document.querySelector("#shoppingForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const input = document.querySelector("#shoppingInput");
+    addShoppingItem(input.value, "Ajouts personnels", "Manuel");
+    input.value = "";
+    saveLocalState();
+    renderApp();
+  });
+
+  document.querySelectorAll("[data-shopping-check]").forEach((input) => {
+    input.addEventListener("change", () => {
+      const item = state.shopping.find((entry) => entry.id === input.dataset.shoppingCheck);
+      if (item) item.bought = input.checked;
+      saveLocalState();
+      renderApp();
+    });
+  });
+
+  document.querySelectorAll("[data-shopping-delete]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.shopping = state.shopping.filter((item) => item.id !== button.dataset.shoppingDelete);
+      saveLocalState();
+      renderApp();
+    });
+  });
+
+  document.querySelector("#removeBought").addEventListener("click", () => {
+    state.shopping = state.shopping.filter((item) => !item.bought);
+    saveLocalState();
+    renderApp();
+  });
+
+  document.querySelector("#clearShopping").addEventListener("click", () => {
+    state.shopping = [];
+    saveLocalState();
+    renderApp();
+  });
+
+  document.querySelector("#shareShopping").addEventListener("click", shareShoppingList);
+}
+
+function addShoppingItem(name, category = "Autres", source = "Manuel") {
+  const cleanName = name.trim();
+  if (!cleanName) return;
+  const existing = state.shopping.find((item) => normalize(item.name) === normalize(cleanName));
+  if (existing) return;
+
+  state.shopping.push({
+    id: createId(),
+    name: cleanName,
+    quantity: "",
+    category,
+    bought: false,
+    source
+  });
+}
+
+async function shareShoppingList() {
+  const text = state.shopping
+    .filter((item) => !item.bought)
+    .map((item) => `\u2610 ${item.name}${item.quantity ? ` \u2014 ${item.quantity}` : ""}`)
+    .join("\n");
+
+  if (!text) return;
+
+  if (navigator.share) {
+    await navigator.share({ title: "Liste de courses", text });
+  } else {
+    await navigator.clipboard.writeText(text);
+    alert("Liste copi\u00E9e dans le presse-papiers.");
+  }
+}
+
+function renderPantry() {
+  const available = state.pantry.filter((item) => item.available).length;
+
+  document.querySelector("#route-pantry").innerHTML = `
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">Garde-manger</span>
+        <h1>Ce que j\u2019ai \u00E0 la maison</h1>
+        <p>Tous les produits du plan sont d\u00E9j\u00E0 pr\u00E9sents. Coche simplement ceux que tu as chez toi.</p>
+      </div>
+    </div>
+
+    <div class="two-column">
+      <article class="panel">
+        <h2>R\u00E9glages</h2>
+        <div class="toggle-row">
+          <div>
+            <strong>Je pars d\u2019un garde-manger vide</strong>
+            <small>Tout produit non coch\u00E9 sera ajout\u00E9 aux courses.</small>
+          </div>
+          <label class="switch">
+            <input id="emptyPantryToggle" type="checkbox" ${state.settings.assumeEmptyPantry ? "checked" : ""}>
+            <span></span>
+          </label>
+        </div>
+        <p>
+          ${available} produit${available > 1 ? "s" : ""} actuellement disponible${available > 1 ? "s" : ""}.
+          Lorsqu\u2019un produit est d\u00E9coch\u00E9, il peut \u00EAtre ajout\u00E9 automatiquement \u00E0 la liste.
+        </p>
+        <div class="button-row">
+          <button class="button secondary" id="markEverythingAvailable">Tout cocher</button>
+          <button class="button danger" id="markEverythingMissing">Tout d\u00E9cocher</button>
+          <button class="button ghost" id="reloadCatalog">Recharger les produits du plan</button>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Produits \u00E0 la maison</h2>
+        <form class="input-row" id="pantryForm">
+          <input class="input" id="pantryInput" placeholder="Ex. huile d\u2019olive\u2026" autocomplete="off">
+          <button class="button secondary" type="submit">Ajouter</button>
+        </form>
+        <div class="list">
+          ${state.pantry.length ? state.pantry
+            .slice()
+            .sort((a, b) => Number(b.available) - Number(a.available) || a.name.localeCompare(b.name, "fr"))
+            .map((item) => `
+              <div class="list-item ${item.available ? "" : "checked"}">
+                <input type="checkbox" data-pantry-check="${item.id}" ${item.available ? "checked" : ""}>
+                <span class="item-label">
+                  <strong>${escapeHtml(item.name)}</strong>
+                  <small>${item.available ? "Disponible" : "Manquant"}${item.category ? ` \u00B7 ${escapeHtml(item.category)}` : ""}</small>
+                </span>
+                <button class="mini-button" data-pantry-delete="${item.id}">\u00D7</button>
+              </div>
+            `).join("") : renderEmpty("Ajoute ton premier produit. Par d\u00E9faut, rien n\u2019est consid\u00E9r\u00E9 comme disponible.")}
+        </div>
+      </article>
+    </div>
+  `;
+
+  document.querySelector("#emptyPantryToggle").addEventListener("change", (event) => {
+    state.settings.assumeEmptyPantry = event.target.checked;
+    saveLocalState();
+  });
+
+  document.querySelector("#pantryForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const input = document.querySelector("#pantryInput");
+    setPantryItem(input.value, true);
+    input.value = "";
+    saveLocalState();
+    renderApp();
+  });
+
+  document.querySelectorAll("[data-pantry-check]").forEach((input) => {
+    input.addEventListener("change", () => {
+      const item = state.pantry.find((entry) => entry.id === input.dataset.pantryCheck);
+      if (!item) return;
+      item.available = input.checked;
+      if (!item.available) addShoppingItem(item.name, "Produits manquants", "Produit manquant");
+      saveLocalState();
+      renderApp();
+    });
+  });
+
+  document.querySelectorAll("[data-pantry-delete]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.pantry = state.pantry.filter((item) => item.id !== button.dataset.pantryDelete);
+      saveLocalState();
+      renderApp();
+    });
+  });
+
+  document.querySelector("#markEverythingAvailable").addEventListener("click", () => {
+    state.pantry.forEach((item) => {
+      item.available = true;
+    });
+    saveLocalState();
+    renderApp();
+  });
+
+  document.querySelector("#markEverythingMissing").addEventListener("click", () => {
+    state.pantry.forEach((item) => {
+      item.available = false;
+    });
+    saveLocalState();
+    renderApp();
+  });
+
+  document.querySelector("#reloadCatalog").addEventListener("click", () => {
+    state = ensurePantryCatalog(state);
+    saveLocalState();
+    renderApp();
+  });
+}
+
+function setPantryItem(name, available) {
+  const cleanName = name.trim();
+  if (!cleanName) return;
+
+  const existing = findPantryItem(cleanName);
+  if (existing) {
+    existing.available = available;
+    return;
+  }
+
+  state.pantry.push({
+    id: createId(),
+    name: cleanName,
+    category: "Ajouts personnels",
+    available,
+    catalog: false
+  });
+}
+
+function findPantryItem(name) {
+  const target = normalize(name);
+  return state.pantry.find((item) => {
+    const candidate = normalize(item.name);
+    return candidate === target || candidate.includes(target) || target.includes(candidate);
+  });
+}
+
+function renderRecipes() {
+  document.querySelector("#route-recipes").innerHTML = `
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">Id\u00E9es pratiques</span>
+        <h1>Recettes</h1>
+        <p>Des assemblages simples construits autour des portions du plan.</p>
+      </div>
+    </div>
+
+    <div class="recipe-grid">
+      ${RECIPES.map((recipe) => `
+        <article class="recipe-card">
+          <div class="recipe-image">${recipe.emoji}</div>
+          <div class="recipe-body">
+            <div class="recipe-meta">${escapeHtml(recipe.tag)} \u00B7 facile</div>
+            <h3>${escapeHtml(recipe.title)}</h3>
+            <p>${escapeHtml(recipe.description)}</p>
+            <div class="button-row">
+              <button class="button primary" data-open-recipe="${recipe.id}">Voir</button>
+              <button class="button secondary" data-add-recipe="${recipe.id}">Aux courses</button>
+            </div>
+          </div>
+        </article>
+      `).join("")}
+    </div>
+  `;
+
+  document.querySelectorAll("[data-open-recipe]").forEach((button) => {
+    button.addEventListener("click", () => openRecipe(button.dataset.openRecipe));
+  });
+
+  document.querySelectorAll("[data-add-recipe]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const recipe = RECIPES.find((entry) => entry.id === button.dataset.addRecipe);
+      recipe.ingredients.forEach((ingredient) => addShoppingItem(ingredient, "Recettes", "Manuel"));
+      saveLocalState();
+      renderApp();
+      showRoute("shopping");
+    });
+  });
+}
+
+function openRecipe(recipeId) {
+  const recipe = RECIPES.find((entry) => entry.id === recipeId);
+  if (!recipe) return;
+
+  document.querySelector("#recipeDialogTag").textContent = recipe.tag;
+  document.querySelector("#recipeDialogTitle").textContent = recipe.title;
+  document.querySelector("#recipeDialogDescription").textContent = recipe.description;
+  document.querySelector("#recipeDialogContent").innerHTML = `
+    <h3>Ingr\u00E9dients</h3>
+    <ul>${recipe.ingredients.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+    <h3>Pr\u00E9paration</h3>
+    <ol>${recipe.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}</ol>
+  `;
+  document.querySelector("#recipeDialog").showModal();
+}
+
+function renderEmpty(message) {
+  return `
+    <div class="empty-state">
+      <span>\u2726</span>
+      <h3>Rien ici pour le moment</h3>
+      <p>${escapeHtml(message)}</p>
+    </div>
+  `;
+}
+
+function renderSyncStatus(status) {
+  const indicator = document.querySelector("#syncIndicator");
+  indicator.className = "sync-indicator";
+
+  if (!SUPABASE_READY) {
+    indicator.textContent = "Mode local";
+    return;
+  }
+
+  if (!currentUser) {
+    indicator.textContent = "Non connect\u00E9";
+    return;
+  }
+
+  if (status === "syncing") {
+    indicator.textContent = "Synchronisation\u2026";
+    indicator.classList.add("pending");
+    return;
+  }
+
+  if (localStorage.getItem(SYNC_QUEUE_KEY)) {
+    indicator.textContent = "\u00C0 synchroniser";
+    indicator.classList.add("pending");
+    return;
+  }
+
+  indicator.textContent = "Synchronis\u00E9";
+  indicator.classList.add("synced");
+}
+
+function scheduleSync() {
+  if (!currentUser || !navigator.onLine || !SUPABASE_READY) return;
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(pushState, 700);
+}
+
+async function pushState() {
+  if (!currentUser || !navigator.onLine || !SUPABASE_READY) return;
+
+  renderSyncStatus("syncing");
+  const { error } = await supabaseClient
+    .from("user_app_state")
+    .upsert({
+      user_id: currentUser.id,
+      state,
+      updated_at: state.updatedAt
+    }, { onConflict: "user_id" });
+
+  if (error) {
+    console.error("Erreur de synchronisation :", error);
+    renderSyncStatus();
+    return;
+  }
+
+  localStorage.removeItem(SYNC_QUEUE_KEY);
+  renderSyncStatus();
+}
+
+async function pullState() {
+  if (!currentUser || !SUPABASE_READY) return;
+
+  renderSyncStatus("syncing");
+  const { data, error } = await supabaseClient
+    .from("user_app_state")
+    .select("state, updated_at")
+    .eq("user_id", currentUser.id)
+    .maybeSingle();
+
+  if (error) {
+    console.error("Erreur de r\u00E9cup\u00E9ration :", error);
+    renderSyncStatus();
+    return;
+  }
+
+  if (!data) {
+    await pushState();
+    return;
+  }
+
+  const remoteTime = new Date(data.updated_at || data.state?.updatedAt || 0).getTime();
+  const localTime = new Date(state.updatedAt || 0).getTime();
+
+  if (remoteTime > localTime || !localStorage.getItem(SYNC_QUEUE_KEY)) {
+    state = ensurePantryCatalog(data.state);
+    saveLocalState({ queueSync: false });
+    localStorage.removeItem(SYNC_QUEUE_KEY);
+  } else {
+    await pushState();
+  }
+
+  renderApp();
+}
+
+async function initializeAuth() {
+  if (!SUPABASE_READY) {
+    renderAccount();
+    return;
+  }
+
+  const { data } = await supabaseClient.auth.getSession();
+  currentUser = data.session?.user ?? null;
+  renderAccount();
+
+  if (currentUser) await pullState();
+
+  supabaseClient.auth.onAuthStateChange(async (_event, session) => {
+    currentUser = session?.user ?? null;
+    renderAccount();
+    renderSyncStatus();
+    if (currentUser) await pullState();
+  });
+}
+
+function renderAccount() {
+  const signedOut = document.querySelector("#signedOutPanel");
+  const signedIn = document.querySelector("#signedInPanel");
+  const accountButton = document.querySelector("#accountButton");
+
+  signedOut.hidden = Boolean(currentUser);
+  signedIn.hidden = !currentUser;
+
+  if (currentUser) {
+    document.querySelector("#accountEmail").textContent = currentUser.email;
+    accountButton.textContent = currentUser.email?.slice(0, 1).toUpperCase() ?? "\u2713";
+  } else {
+    accountButton.textContent = "A";
+  }
+
+  if (!SUPABASE_READY) {
+    document.querySelector("#authDescription").textContent =
+      "La synchronisation n\u2019est pas encore configur\u00E9e. Suis le README puis compl\u00E8te config.js.";
+    document.querySelector("#signInButton").disabled = true;
+    document.querySelector("#signUpButton").disabled = true;
+  }
+}
+
+async function signIn() {
+  const email = document.querySelector("#authEmail").value.trim();
+  const password = document.querySelector("#authPassword").value;
+  setAuthMessage("");
+
+  const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+  if (error) setAuthMessage(error.message);
+  else document.querySelector("#accountDialog").close();
+}
+
+async function signUp() {
+  const email = document.querySelector("#authEmail").value.trim();
+  const password = document.querySelector("#authPassword").value;
+  setAuthMessage("");
+
+  const { error } = await supabaseClient.auth.signUp({ email, password });
+  if (error) {
+    setAuthMessage(error.message);
+    return;
+  }
+
+  setAuthMessage("Compte cr\u00E9\u00E9. V\u00E9rifie ton e-mail si la confirmation est activ\u00E9e.", true);
+}
+
+function setAuthMessage(message, success = false) {
+  const element = document.querySelector("#authMessage");
+  element.textContent = message;
+  element.style.color = success ? "var(--green)" : "var(--danger)";
+}
+
+async function signOut() {
+  await supabaseClient.auth.signOut();
+  document.querySelector("#accountDialog").close();
+}
+
+function bindGlobalEvents() {
+  document.querySelectorAll("[data-route]").forEach((button) => {
+    button.addEventListener("click", () => showRoute(button.dataset.route));
+  });
+
+  document.querySelector("#accountButton").addEventListener("click", () => {
+    document.querySelector("#accountDialog").showModal();
+  });
+
+  document.querySelector("#signInButton").addEventListener("click", signIn);
+  document.querySelector("#signUpButton").addEventListener("click", signUp);
+  document.querySelector("#signOutButton").addEventListener("click", signOut);
+  document.querySelector("#syncNowButton").addEventListener("click", pushState);
+  document.querySelector("#closeRecipeButton").addEventListener("click", () => {
+    document.querySelector("#recipeDialog").close();
+  });
+
+  window.addEventListener("online", () => {
+    document.querySelector("#offlineBanner").hidden = true;
+    scheduleSync();
+  });
+
+  window.addEventListener("offline", () => {
+    document.querySelector("#offlineBanner").hidden = false;
+    renderSyncStatus();
+  });
+
+  window.addEventListener("hashchange", () => {
+    const route = location.hash.slice(1);
+    if (["today", "week", "shopping", "pantry", "recipes"].includes(route)) showRoute(route);
+  });
+
+  window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+    document.querySelector("#installButton").hidden = false;
+  });
+
+  document.querySelector("#installButton").addEventListener("click", async () => {
+    if (!deferredInstallPrompt) return;
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt = null;
+    document.querySelector("#installButton").hidden = true;
+  });
+}
+
+async function registerServiceWorker() {
+  if ("serviceWorker" in navigator) {
+    try {
+      await navigator.serviceWorker.register("./service-worker.js");
+    } catch (error) {
+      console.error("Service worker non enregistr\u00E9 :", error);
+    }
+  }
+}
+
+async function initialize() {
+  bindGlobalEvents();
+  renderApp();
+  showRoute(location.hash.slice(1) || "today");
+  document.querySelector("#offlineBanner").hidden = navigator.onLine;
+  await registerServiceWorker();
+  await initializeAuth();
+}
+
+initialize();
           food("150 g", "LÃ©gumes", "Fruits et lÃ©gumes"),
           food("20 g", "Huile dâ€™olive", "Ã‰picerie"),
           food("40 g", "Fromage", "Produits frais"),
