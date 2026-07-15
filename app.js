@@ -15,145 +15,145 @@ function food(quantity, name, category, alternatives = []) {
 
 const PLANS = {
   simple: {
-    label: "Petit déjeuner simple",
+    label: "Petit dÃ©jeuner simple",
     meals: [
       {
         id: "breakfast",
-        title: "Petit déjeuner",
-        icon: "☀️",
+        title: "Petit dÃ©jeuner",
+        icon: "â˜€ï¸",
         foods: [
           food("125 g", "Yaourt nature", "Produits frais", ["90 g de fromage blanc nature 3 % MG"]),
-          food("5 g", "Miel", "Épicerie", ["5 g de sucre", "5 g de sirop d’agave"]),
-          food("150 g", "Fruit cru", "Fruits et légumes")
+          food("5 g", "Miel", "Ã‰picerie", ["5 g de sucre", "5 g de sirop dâ€™agave"]),
+          food("150 g", "Fruit cru", "Fruits et lÃ©gumes")
         ]
       },
       {
         id: "lunch",
-        title: "Déjeuner",
-        icon: "🥗",
+        title: "DÃ©jeuner",
+        icon: "ðŸ¥—",
         foods: [
-          food("150 g", "Viande cuite", "Viandes et poissons", ["190 g de poisson", "75 g de céréales-légumineuses crues", "205 g d’œufs durs"]),
-          food("90 g", "Pâtes complètes sèches", "Féculents", ["340 g de pommes de terre cuites", "90 g de riz complet cru"]),
-          food("150 g", "Légumes", "Fruits et légumes"),
-          food("20 g", "Huile d’olive", "Épicerie"),
+          food("150 g", "Viande cuite", "Viandes et poissons", ["190 g de poisson", "75 g de cÃ©rÃ©ales-lÃ©gumineuses crues", "205 g dâ€™Å“ufs durs"]),
+          food("90 g", "PÃ¢tes complÃ¨tes sÃ¨ches", "FÃ©culents", ["340 g de pommes de terre cuites", "90 g de riz complet cru"]),
+          food("150 g", "LÃ©gumes", "Fruits et lÃ©gumes"),
+          food("20 g", "Huile dâ€™olive", "Ã‰picerie"),
           food("40 g", "Fromage", "Produits frais"),
           food("80 g", "Pain de mie complet", "Boulangerie"),
           food("125 g", "Yaourt nature", "Produits frais"),
-          food("5 g", "Miel", "Épicerie"),
-          food("150 g", "Fruit", "Fruits et légumes")
+          food("5 g", "Miel", "Ã‰picerie"),
+          food("150 g", "Fruit", "Fruits et lÃ©gumes")
         ]
       },
       {
         id: "snack",
         title: "Collation",
-        icon: "🍎",
+        icon: "ðŸŽ",
         foods: [
-          food("100 g", "Fruit cru", "Fruits et légumes", ["105 g de compote sans sucres ajoutés"]),
+          food("100 g", "Fruit cru", "Fruits et lÃ©gumes", ["105 g de compote sans sucres ajoutÃ©s"]),
           food("80 g", "Pain complet", "Boulangerie"),
-          food("10 g", "Beurre doux", "Produits frais", ["10 g de beurre de cacahuète"]),
-          food("20 g", "Miel", "Épicerie", ["25 g de confiture"])
+          food("10 g", "Beurre doux", "Produits frais", ["10 g de beurre de cacahuÃ¨te"]),
+          food("20 g", "Miel", "Ã‰picerie", ["25 g de confiture"])
         ]
       },
       {
         id: "dinner",
-        title: "Dîner",
-        icon: "🌙",
+        title: "DÃ®ner",
+        icon: "ðŸŒ™",
         foods: [
-          food("120 g", "Viande cuite", "Viandes et poissons", ["165 g d’œufs durs", "150 g de poisson", "60 g de céréales-légumineuses crues"]),
-          food("80 g", "Pâtes complètes sèches", "Féculents", ["305 g de pommes de terre cuites", "80 g de riz complet cru"]),
-          food("150 g", "Légumes", "Fruits et légumes"),
-          food("20 g", "Huile d’olive", "Épicerie"),
+          food("120 g", "Viande cuite", "Viandes et poissons", ["165 g dâ€™Å“ufs durs", "150 g de poisson", "60 g de cÃ©rÃ©ales-lÃ©gumineuses crues"]),
+          food("80 g", "PÃ¢tes complÃ¨tes sÃ¨ches", "FÃ©culents", ["305 g de pommes de terre cuites", "80 g de riz complet cru"]),
+          food("150 g", "LÃ©gumes", "Fruits et lÃ©gumes"),
+          food("20 g", "Huile dâ€™olive", "Ã‰picerie"),
           food("40 g", "Fromage", "Produits frais"),
-          food("150 g", "Fruit", "Fruits et légumes"),
+          food("150 g", "Fruit", "Fruits et lÃ©gumes"),
           food("80 g", "Pain de mie complet", "Boulangerie")
         ]
       },
       {
         id: "extras",
-        title: "Dans la journée",
-        icon: "✨",
+        title: "Dans la journÃ©e",
+        icon: "âœ¨",
         foods: [
-          food("30 g", "Chocolat noir 70 %", "Épicerie"),
-          food("30 g", "Noix", "Épicerie", ["20 g d’amandes", "20 g de noisettes", "20 g de noix de cajou"])
+          food("30 g", "Chocolat noir 70 %", "Ã‰picerie"),
+          food("30 g", "Noix", "Ã‰picerie", ["20 g dâ€™amandes", "20 g de noisettes", "20 g de noix de cajou"])
         ]
       }
     ]
   },
   complete: {
-    label: "Petit déjeuner complet",
+    label: "Petit dÃ©jeuner complet",
     meals: [
       {
         id: "breakfast",
-        title: "Petit déjeuner",
-        icon: "☀️",
+        title: "Petit dÃ©jeuner",
+        icon: "â˜€ï¸",
         foods: [
-          food("200 g", "Lait demi-écrémé", "Produits frais"),
+          food("200 g", "Lait demi-Ã©crÃ©mÃ©", "Produits frais"),
           food("125 g", "Yaourt nature", "Produits frais", ["90 g de fromage blanc nature 3 % MG"]),
-          food("5 g", "Miel", "Épicerie", ["5 g de sucre", "5 g de sirop d’agave"]),
-          food("80 g", "Pain complet", "Boulangerie", ["60 g de flocons d’avoine", "55 g de muesli"]),
+          food("5 g", "Miel", "Ã‰picerie", ["5 g de sucre", "5 g de sirop dâ€™agave"]),
+          food("80 g", "Pain complet", "Boulangerie", ["60 g de flocons dâ€™avoine", "55 g de muesli"]),
           food("10 g", "Beurre doux", "Produits frais"),
-          food("20 g", "Confiture", "Épicerie")
+          food("20 g", "Confiture", "Ã‰picerie")
         ]
       },
       {
         id: "snack-am",
         title: "Collation du matin",
-        icon: "🍏",
+        icon: "ðŸ",
         foods: [
-          food("100 g", "Fruit cru", "Fruits et légumes", ["105 g de compote sans sucres ajoutés"]),
-          food("40 g", "Pain de mie complet", "Boulangerie", ["65 g de barre céréalière protéinée"]),
-          food("10 g", "Beurre doux", "Produits frais", ["10 g de beurre de cacahuète"]),
-          food("10 g", "Miel", "Épicerie", ["15 g de confiture"])
+          food("100 g", "Fruit cru", "Fruits et lÃ©gumes", ["105 g de compote sans sucres ajoutÃ©s"]),
+          food("40 g", "Pain de mie complet", "Boulangerie", ["65 g de barre cÃ©rÃ©aliÃ¨re protÃ©inÃ©e"]),
+          food("10 g", "Beurre doux", "Produits frais", ["10 g de beurre de cacahuÃ¨te"]),
+          food("10 g", "Miel", "Ã‰picerie", ["15 g de confiture"])
         ]
       },
       {
         id: "lunch",
-        title: "Déjeuner",
-        icon: "🥗",
+        title: "DÃ©jeuner",
+        icon: "ðŸ¥—",
         foods: [
-          food("150 g", "Viande cuite", "Viandes et poissons", ["190 g de poisson", "75 g de céréales-légumineuses crues", "205 g d’œufs durs"]),
-          food("80 g", "Pâtes complètes sèches", "Féculents", ["305 g de pommes de terre cuites", "80 g de riz complet cru"]),
-          food("150 g", "Légumes", "Fruits et légumes"),
-          food("20 g", "Huile d’olive", "Épicerie"),
+          food("150 g", "Viande cuite", "Viandes et poissons", ["190 g de poisson", "75 g de cÃ©rÃ©ales-lÃ©gumineuses crues", "205 g dâ€™Å“ufs durs"]),
+          food("80 g", "PÃ¢tes complÃ¨tes sÃ¨ches", "FÃ©culents", ["305 g de pommes de terre cuites", "80 g de riz complet cru"]),
+          food("150 g", "LÃ©gumes", "Fruits et lÃ©gumes"),
+          food("20 g", "Huile dâ€™olive", "Ã‰picerie"),
           food("30 g", "Fromage", "Produits frais"),
           food("40 g", "Pain de mie complet", "Boulangerie"),
           food("125 g", "Yaourt nature", "Produits frais"),
-          food("5 g", "Miel", "Épicerie"),
-          food("150 g", "Fruit", "Fruits et légumes")
+          food("5 g", "Miel", "Ã‰picerie"),
+          food("150 g", "Fruit", "Fruits et lÃ©gumes")
         ]
       },
       {
         id: "snack-pm",
-        title: "Collation de l’après-midi",
-        icon: "🥪",
+        title: "Collation de lâ€™aprÃ¨s-midi",
+        icon: "ðŸ¥ª",
         foods: [
-          food("100 g", "Fruit cru", "Fruits et légumes", ["105 g de compote sans sucres ajoutés"]),
+          food("100 g", "Fruit cru", "Fruits et lÃ©gumes", ["105 g de compote sans sucres ajoutÃ©s"]),
           food("80 g", "Pain complet", "Boulangerie"),
-          food("10 g", "Beurre doux", "Produits frais", ["10 g de beurre de cacahuète"]),
-          food("20 g", "Miel", "Épicerie", ["25 g de confiture"])
+          food("10 g", "Beurre doux", "Produits frais", ["10 g de beurre de cacahuÃ¨te"]),
+          food("20 g", "Miel", "Ã‰picerie", ["25 g de confiture"])
         ]
       },
       {
         id: "dinner",
-        title: "Dîner",
-        icon: "🌙",
+        title: "DÃ®ner",
+        icon: "ðŸŒ™",
         foods: [
-          food("120 g", "Viande cuite", "Viandes et poissons", ["165 g d’œufs durs", "150 g de poisson", "60 g de céréales-légumineuses crues"]),
-          food("70 g", "Pâtes complètes sèches", "Féculents", ["265 g de pommes de terre cuites", "70 g de riz complet cru"]),
-          food("150 g", "Légumes", "Fruits et légumes"),
-          food("20 g", "Huile d’olive", "Épicerie"),
+          food("120 g", "Viande cuite", "Viandes et poissons", ["165 g dâ€™Å“ufs durs", "150 g de poisson", "60 g de cÃ©rÃ©ales-lÃ©gumineuses crues"]),
+          food("70 g", "PÃ¢tes complÃ¨tes sÃ¨ches", "FÃ©culents", ["265 g de pommes de terre cuites", "70 g de riz complet cru"]),
+          food("150 g", "LÃ©gumes", "Fruits et lÃ©gumes"),
+          food("20 g", "Huile dâ€™olive", "Ã‰picerie"),
           food("30 g", "Fromage", "Produits frais"),
-          food("150 g", "Fruit", "Fruits et légumes"),
+          food("150 g", "Fruit", "Fruits et lÃ©gumes"),
           food("40 g", "Pain de mie complet", "Boulangerie")
         ]
       },
       {
         id: "extras",
-        title: "Dans la journée",
-        icon: "✨",
+        title: "Dans la journÃ©e",
+        icon: "âœ¨",
         foods: [
-          food("30 g", "Chocolat noir 70 %", "Épicerie"),
-          food("30 g", "Noix", "Épicerie", ["20 g d’amandes", "20 g de noisettes", "20 g de noix de cajou"])
+          food("30 g", "Chocolat noir 70 %", "Ã‰picerie"),
+          food("30 g", "Noix", "Ã‰picerie", ["20 g dâ€™amandes", "20 g de noisettes", "20 g de noix de cajou"])
         ]
       }
     ]
@@ -163,66 +163,128 @@ const PLANS = {
 const RECIPES = [
   {
     id: "bowl",
-    emoji: "🥣",
-    tag: "Petit déjeuner",
+    emoji: "ðŸ¥£",
+    tag: "Petit dÃ©jeuner",
     title: "Bowl yaourt, fruit et miel",
-    description: "Une préparation fraîche prête en cinq minutes.",
+    description: "Une prÃ©paration fraÃ®che prÃªte en cinq minutes.",
     ingredients: ["125 g de yaourt nature", "150 g de fruit", "5 g de miel"],
     steps: ["Couper le fruit.", "Verser le yaourt dans un bol.", "Ajouter le fruit puis le miel."]
   },
   {
     id: "oats",
-    emoji: "🌾",
-    tag: "Petit déjeuner complet",
+    emoji: "ðŸŒ¾",
+    tag: "Petit dÃ©jeuner complet",
     title: "Overnight oats",
-    description: "Préparé la veille pour gagner du temps le matin.",
-    ingredients: ["60 g de flocons d’avoine", "200 g de lait", "125 g de yaourt", "5 g de miel"],
-    steps: ["Mélanger les ingrédients dans un bocal.", "Fermer et réserver au frais toute la nuit.", "Remuer avant de manger."]
+    description: "PrÃ©parÃ© la veille pour gagner du temps le matin.",
+    ingredients: ["60 g de flocons dâ€™avoine", "200 g de lait", "125 g de yaourt", "5 g de miel"],
+    steps: ["MÃ©langer les ingrÃ©dients dans un bocal.", "Fermer et rÃ©server au frais toute la nuit.", "Remuer avant de manger."]
   },
   {
     id: "chicken-pasta",
-    emoji: "🍝",
-    tag: "Déjeuner",
-    title: "Poulet et pâtes complètes",
-    description: "Un plat simple avec légumes et huile d’olive.",
-    ingredients: ["Pâtes selon le plan", "150 g de poulet cuit", "150 g de légumes", "20 g d’huile d’olive"],
-    steps: ["Cuire les pâtes.", "Cuire les légumes.", "Ajouter le poulet.", "Assembler avec l’huile hors du feu."]
+    emoji: "ðŸ",
+    tag: "DÃ©jeuner",
+    title: "Poulet et pÃ¢tes complÃ¨tes",
+    description: "Un plat simple avec lÃ©gumes et huile dâ€™olive.",
+    ingredients: ["PÃ¢tes selon le plan", "150 g de poulet cuit", "150 g de lÃ©gumes", "20 g dâ€™huile dâ€™olive"],
+    steps: ["Cuire les pÃ¢tes.", "Cuire les lÃ©gumes.", "Ajouter le poulet.", "Assembler avec lâ€™huile hors du feu."]
   },
   {
     id: "fish-rice",
-    emoji: "🍚",
-    tag: "Dîner",
-    title: "Poisson, riz et légumes",
-    description: "Une assiette complète et facile à préparer.",
-    ingredients: ["150 g de poisson", "Riz selon le plan", "150 g de légumes", "20 g d’huile d’olive"],
-    steps: ["Cuire le riz.", "Cuire le poisson.", "Cuire les légumes.", "Assembler et assaisonner."]
+    emoji: "ðŸš",
+    tag: "DÃ®ner",
+    title: "Poisson, riz et lÃ©gumes",
+    description: "Une assiette complÃ¨te et facile Ã  prÃ©parer.",
+    ingredients: ["150 g de poisson", "Riz selon le plan", "150 g de lÃ©gumes", "20 g dâ€™huile dâ€™olive"],
+    steps: ["Cuire le riz.", "Cuire le poisson.", "Cuire les lÃ©gumes.", "Assembler et assaisonner."]
   },
   {
     id: "toast",
-    emoji: "🍞",
+    emoji: "ðŸž",
     tag: "Collation",
-    title: "Tartines fruitées",
-    description: "Une collation rapide à emporter.",
-    ingredients: ["Pain selon le plan", "Beurre ou beurre de cacahuète", "Miel ou confiture", "Fruit ou compote"],
-    steps: ["Faire griller le pain.", "Ajouter la matière grasse choisie.", "Ajouter le miel ou la confiture.", "Servir avec le fruit."]
+    title: "Tartines fruitÃ©es",
+    description: "Une collation rapide Ã  emporter.",
+    ingredients: ["Pain selon le plan", "Beurre ou beurre de cacahuÃ¨te", "Miel ou confiture", "Fruit ou compote"],
+    steps: ["Faire griller le pain.", "Ajouter la matiÃ¨re grasse choisie.", "Ajouter le miel ou la confiture.", "Servir avec le fruit."]
   },
   {
     id: "potato-eggs",
-    emoji: "🥔",
+    emoji: "ðŸ¥”",
     tag: "Alternative",
-    title: "Pommes de terre et œufs",
-    description: "Une alternative pratique à la viande.",
-    ingredients: ["Pommes de terre selon le plan", "Œufs selon le plan", "150 g de légumes", "20 g d’huile d’olive"],
-    steps: ["Cuire les pommes de terre.", "Cuire les œufs durs.", "Préparer les légumes.", "Assembler avec l’huile."]
+    title: "Pommes de terre et Å“ufs",
+    description: "Une alternative pratique Ã  la viande.",
+    ingredients: ["Pommes de terre selon le plan", "Å’ufs selon le plan", "150 g de lÃ©gumes", "20 g dâ€™huile dâ€™olive"],
+    steps: ["Cuire les pommes de terre.", "Cuire les Å“ufs durs.", "PrÃ©parer les lÃ©gumes.", "Assembler avec lâ€™huile."]
   }
 ];
 
+function cleanCatalogName(value) {
+  return value
+    .replace(/^\s*\d+(?:[.,]\d+)?\s*(?:g|kg|ml|cl|l)\s+(?:de |dâ€™|d')?/i, "")
+    .trim()
+    .replace(/^./, (letter) => letter.toUpperCase());
+}
+
+function buildPantryCatalog() {
+  const catalog = new Map();
+
+  Object.values(PLANS).forEach((plan) => {
+    plan.meals.forEach((meal) => {
+      meal.foods.forEach((entry) => {
+        const names = [entry.name, ...entry.alternatives.map(cleanCatalogName)];
+
+        names.forEach((name) => {
+          const cleanName = cleanCatalogName(name);
+          const key = normalize(cleanName);
+
+          if (!cleanName || catalog.has(key)) return;
+
+          catalog.set(key, {
+            id: `catalog-${key.replaceAll(" ", "-")}`,
+            name: cleanName,
+            category: entry.category,
+            available: false,
+            catalog: true
+          });
+        });
+      });
+    });
+  });
+
+  return [...catalog.values()].sort(
+    (left, right) =>
+      left.category.localeCompare(right.category, "fr") ||
+      left.name.localeCompare(right.name, "fr")
+  );
+}
+
+function ensurePantryCatalog(sourceState) {
+  const nextState = sourceState ?? createInitialState();
+  const existingPantry = Array.isArray(nextState.pantry) ? nextState.pantry : [];
+  const existingByName = new Map(existingPantry.map((item) => [normalize(item.name), item]));
+
+  buildPantryCatalog().forEach((catalogItem) => {
+    const existing = existingByName.get(normalize(catalogItem.name));
+
+    if (existing) {
+      existing.category ??= catalogItem.category;
+      existing.catalog ??= true;
+      return;
+    }
+
+    existingPantry.push(catalogItem);
+  });
+
+  nextState.pantry = existingPantry;
+  nextState.version = 3;
+  return nextState;
+}
+
 function createInitialState() {
   return {
-    version: 2,
+    version: 3,
     weekStart: toIsoDate(startOfWeek(new Date())),
     days: Object.fromEntries(DAY_KEYS.map((key) => [key, { plan: "complete", completed: [] }])),
-    pantry: [],
+    pantry: buildPantryCatalog(),
     shopping: [],
     settings: {
       assumeEmptyPantry: true,
@@ -240,7 +302,7 @@ let deferredInstallPrompt = null;
 function loadLocalState() {
   try {
     const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    return parsed?.version === 2 ? parsed : createInitialState();
+    return parsed ? ensurePantryCatalog(parsed) : createInitialState();
   } catch {
     return createInitialState();
   }
@@ -350,8 +412,8 @@ function renderToday() {
         <span class="eyebrow">${escapeHtml(info.label)} ${escapeHtml(info.shortDate)}</span>
         <h1>Ton plan,<br>sans charge mentale.</h1>
         <p class="hero-copy">
-          Consulte les repas du jour, coche ce qui est fait et indique immédiatement
-          les produits manquants à la maison.
+          Consulte les repas du jour, coche ce qui est fait et indique immÃ©diatement
+          les produits manquants Ã  la maison.
         </p>
       </article>
       <aside class="hero-side">
@@ -360,14 +422,14 @@ function renderToday() {
           <div class="big-number">${completedCount}<small> / ${plan.meals.length}</small></div>
           <div class="progress"><span style="width:${percent}%"></span></div>
         </div>
-        <p>${percent === 100 ? "Journée terminée. Beau travail." : `${percent} % du programme réalisé.`}</p>
+        <p>${percent === 100 ? "JournÃ©e terminÃ©e. Beau travail." : `${percent} % du programme rÃ©alisÃ©.`}</p>
       </aside>
     </section>
 
     <div class="section-heading">
       <div>
-        <h2>Programme d’aujourd’hui</h2>
-        <p>Le choix modifie automatiquement les quantités de la semaine.</p>
+        <h2>Programme dâ€™aujourdâ€™hui</h2>
+        <p>Le choix modifie automatiquement les quantitÃ©s de la semaine.</p>
       </div>
       ${renderPlanChoice(info.key, dayState.plan)}
     </div>
@@ -377,8 +439,8 @@ function renderToday() {
     </div>
 
     <div class="notice">
-      Le plan prévoit un repas plaisir par semaine. Les recettes proposées sont des idées
-      d’organisation ; les consignes de ton diététicien restent prioritaires.
+      Le plan prÃ©voit un repas plaisir par semaine. Les recettes proposÃ©es sont des idÃ©es
+      dâ€™organisation ; les consignes de ton diÃ©tÃ©ticien restent prioritaires.
     </div>
   `;
 
@@ -403,11 +465,11 @@ function renderMealCard(dayKey, meal, completed) {
           <span>${meal.icon}</span>
           <div>
             <h3>${escapeHtml(meal.title)}</h3>
-            <small>${meal.foods.length} éléments</small>
+            <small>${meal.foods.length} Ã©lÃ©ments</small>
           </div>
         </div>
         <button class="done-button ${completed ? "done" : ""}" data-complete-meal="${meal.id}" data-day="${dayKey}">
-          ${completed ? "✓ Fait" : "Marquer fait"}
+          ${completed ? "âœ“ Fait" : "Marquer fait"}
         </button>
       </div>
       <div class="food-list">
@@ -416,10 +478,10 @@ function renderMealCard(dayKey, meal, completed) {
             <span class="quantity">${escapeHtml(entry.quantity)}</span>
             <span class="food-title">
               ${escapeHtml(entry.name)}
-              ${entry.alternatives.length ? `<small class="food-alternatives">ou ${entry.alternatives.map(escapeHtml).join(" · ou ")}</small>` : ""}
+              ${entry.alternatives.length ? `<small class="food-alternatives">ou ${entry.alternatives.map(escapeHtml).join(" Â· ou ")}</small>` : ""}
             </span>
             <button class="mini-button" data-missing-food="${escapeHtml(entry.name)}" data-category="${escapeHtml(entry.category)}">
-              Je n’en ai plus
+              Je nâ€™en ai plus
             </button>
           </div>
         `).join("")}
@@ -476,9 +538,9 @@ function renderWeek() {
         <p>Du ${formatDate(weekStart)} au ${formatDate(weekEnd)}.</p>
       </div>
       <div class="button-row">
-        <button class="button ghost" id="previousWeek">← Semaine précédente</button>
+        <button class="button ghost" id="previousWeek">â† Semaine prÃ©cÃ©dente</button>
         <button class="button secondary" id="currentWeek">Cette semaine</button>
-        <button class="button ghost" id="nextWeek">Semaine suivante →</button>
+        <button class="button ghost" id="nextWeek">Semaine suivante â†’</button>
       </div>
     </div>
 
@@ -496,7 +558,7 @@ function renderWeek() {
               ${plan.meals.map((meal) => `
                 <div class="day-meal ${day.completed.includes(meal.id) ? "completed" : ""}">
                   <span>${meal.icon} ${escapeHtml(meal.title)}</span>
-                  <span>${day.completed.includes(meal.id) ? "✓" : ""}</span>
+                  <span>${day.completed.includes(meal.id) ? "âœ“" : ""}</span>
                 </div>
               `).join("")}
             </div>
@@ -506,11 +568,11 @@ function renderWeek() {
     </div>
 
     <div class="panel">
-      <h2>Préparer la semaine</h2>
-      <p>La liste est calculée avec les sept journées ci-dessus et les produits déjà présents à la maison.</p>
+      <h2>PrÃ©parer la semaine</h2>
+      <p>La liste est calculÃ©e avec les sept journÃ©es ci-dessus et les produits dÃ©jÃ  prÃ©sents Ã  la maison.</p>
       <div class="button-row">
-        <button class="button primary" id="generateShopping">Générer la liste de courses</button>
-        <button class="button ghost" id="resetWeekProgress">Réinitialiser les repas cochés</button>
+        <button class="button primary" id="generateShopping">GÃ©nÃ©rer la liste de courses</button>
+        <button class="button ghost" id="resetWeekProgress">RÃ©initialiser les repas cochÃ©s</button>
       </div>
     </div>
   `;
@@ -549,7 +611,7 @@ function parseQuantity(quantity) {
   const match = quantity.replace(",", ".").match(/^(\d+(?:\.\d+)?)\s*(g|kg|ml|cl|l)?$/i);
   if (!match) return null;
   let value = Number(match[1]);
-  const unit = (match[2] || "unité").toLowerCase();
+  const unit = (match[2] || "unitÃ©").toLowerCase();
   if (unit === "kg") return { value: value * 1000, unit: "g" };
   if (unit === "l") return { value: value * 1000, unit: "ml" };
   if (unit === "cl") return { value: value * 10, unit: "ml" };
@@ -587,7 +649,7 @@ function generateWeeklyShopping() {
     if (pantryItem?.available) return;
 
     const quantity = [...entry.amounts.entries()]
-      .map(([unit, value]) => unit === "unité" ? `${value} portion(s)` : `${Math.round(value)} ${unit}`)
+      .map(([unit, value]) => unit === "unitÃ©" ? `${value} portion(s)` : `${Math.round(value)} ${unit}`)
       .join(" + ");
 
     generated.push({
@@ -615,7 +677,7 @@ function renderShopping() {
       <div>
         <span class="eyebrow">Sept jours</span>
         <h1>Liste de courses</h1>
-        <p>Quantités cumulées selon les plans choisis et les produits disponibles à la maison.</p>
+        <p>QuantitÃ©s cumulÃ©es selon les plans choisis et les produits disponibles Ã  la maison.</p>
       </div>
       <div class="button-row">
         <button class="button primary" id="regenerateShopping">Recalculer</button>
@@ -625,13 +687,13 @@ function renderShopping() {
 
     <div class="shopping-summary">
       <div class="summary-tile"><strong>${items.length}</strong><small>produits</small></div>
-      <div class="summary-tile"><strong>${bought}</strong><small>achetés</small></div>
+      <div class="summary-tile"><strong>${bought}</strong><small>achetÃ©s</small></div>
       <div class="summary-tile"><strong>${Math.max(items.length - bought, 0)}</strong><small>restants</small></div>
     </div>
 
     <div class="panel">
       <form class="input-row" id="shoppingForm">
-        <input class="input" id="shoppingInput" placeholder="Ajouter un produit…" autocomplete="off">
+        <input class="input" id="shoppingInput" placeholder="Ajouter un produitâ€¦" autocomplete="off">
         <button class="button secondary" type="submit">Ajouter</button>
       </form>
 
@@ -645,14 +707,14 @@ function renderShopping() {
                 <strong>${escapeHtml(item.name)}</strong>
                 <small>${escapeHtml(item.quantity || item.source)}</small>
               </span>
-              <button class="mini-button" data-shopping-delete="${item.id}">×</button>
+              <button class="mini-button" data-shopping-delete="${item.id}">Ã—</button>
             </div>
           `).join("")}
-        `).join("") : renderEmpty("Génère la liste depuis la page Semaine ou ajoute un produit manuellement.")}
+        `).join("") : renderEmpty("GÃ©nÃ¨re la liste depuis la page Semaine ou ajoute un produit manuellement.")}
       </div>
 
       <div class="button-row" style="margin-top:16px">
-        <button class="button ghost" id="removeBought">Retirer les produits achetés</button>
+        <button class="button ghost" id="removeBought">Retirer les produits achetÃ©s</button>
         <button class="button danger" id="clearShopping">Vider la liste</button>
       </div>
     </div>
@@ -719,7 +781,7 @@ function addShoppingItem(name, category = "Autres", source = "Manuel") {
 async function shareShoppingList() {
   const text = state.shopping
     .filter((item) => !item.bought)
-    .map((item) => `☐ ${item.name}${item.quantity ? ` — ${item.quantity}` : ""}`)
+    .map((item) => `â˜ ${item.name}${item.quantity ? ` â€” ${item.quantity}` : ""}`)
     .join("\n");
 
   if (!text) return;
@@ -728,7 +790,7 @@ async function shareShoppingList() {
     await navigator.share({ title: "Liste de courses", text });
   } else {
     await navigator.clipboard.writeText(text);
-    alert("Liste copiée dans le presse-papiers.");
+    alert("Liste copiÃ©e dans le presse-papiers.");
   }
 }
 
@@ -739,18 +801,18 @@ function renderPantry() {
     <div class="section-heading">
       <div>
         <span class="eyebrow">Garde-manger</span>
-        <h1>Ce que j’ai à la maison</h1>
-        <p>Tu pars de zéro : ajoute uniquement ce que tu achètes ou ce que tu possèdes déjà.</p>
+        <h1>Ce que jâ€™ai Ã  la maison</h1>
+        <p>Tous les produits du plan sont dÃ©jÃ  prÃ©sents. Coche simplement ceux que tu as chez toi.</p>
       </div>
     </div>
 
     <div class="two-column">
       <article class="panel">
-        <h2>Réglages</h2>
+        <h2>RÃ©glages</h2>
         <div class="toggle-row">
           <div>
-            <strong>Je pars d’un garde-manger vide</strong>
-            <small>Tout produit non coché sera ajouté aux courses.</small>
+            <strong>Je pars dâ€™un garde-manger vide</strong>
+            <small>Tout produit non cochÃ© sera ajoutÃ© aux courses.</small>
           </div>
           <label class="switch">
             <input id="emptyPantryToggle" type="checkbox" ${state.settings.assumeEmptyPantry ? "checked" : ""}>
@@ -759,15 +821,19 @@ function renderPantry() {
         </div>
         <p>
           ${available} produit${available > 1 ? "s" : ""} actuellement disponible${available > 1 ? "s" : ""}.
-          Lorsqu’un produit est décoché, il peut être ajouté automatiquement à la liste.
+          Lorsquâ€™un produit est dÃ©cochÃ©, il peut Ãªtre ajoutÃ© automatiquement Ã  la liste.
         </p>
-        <button class="button danger" id="markEverythingMissing">Tout marquer comme manquant</button>
+        <div class="button-row">
+          <button class="button secondary" id="markEverythingAvailable">Tout cocher</button>
+          <button class="button danger" id="markEverythingMissing">Tout dÃ©cocher</button>
+          <button class="button ghost" id="reloadCatalog">Recharger les produits du plan</button>
+        </div>
       </article>
 
       <article class="panel">
-        <h2>Produits à la maison</h2>
+        <h2>Produits Ã  la maison</h2>
         <form class="input-row" id="pantryForm">
-          <input class="input" id="pantryInput" placeholder="Ex. huile d’olive…" autocomplete="off">
+          <input class="input" id="pantryInput" placeholder="Ex. huile dâ€™oliveâ€¦" autocomplete="off">
           <button class="button secondary" type="submit">Ajouter</button>
         </form>
         <div class="list">
@@ -779,11 +845,11 @@ function renderPantry() {
                 <input type="checkbox" data-pantry-check="${item.id}" ${item.available ? "checked" : ""}>
                 <span class="item-label">
                   <strong>${escapeHtml(item.name)}</strong>
-                  <small>${item.available ? "Disponible" : "Manquant"}</small>
+                  <small>${item.available ? "Disponible" : "Manquant"}${item.category ? ` Â· ${escapeHtml(item.category)}` : ""}</small>
                 </span>
-                <button class="mini-button" data-pantry-delete="${item.id}">×</button>
+                <button class="mini-button" data-pantry-delete="${item.id}">Ã—</button>
               </div>
-            `).join("") : renderEmpty("Ajoute ton premier produit. Par défaut, rien n’est considéré comme disponible.")}
+            `).join("") : renderEmpty("Ajoute ton premier produit. Par dÃ©faut, rien nâ€™est considÃ©rÃ© comme disponible.")}
         </div>
       </article>
     </div>
@@ -822,11 +888,24 @@ function renderPantry() {
     });
   });
 
+  document.querySelector("#markEverythingAvailable").addEventListener("click", () => {
+    state.pantry.forEach((item) => {
+      item.available = true;
+    });
+    saveLocalState();
+    renderApp();
+  });
+
   document.querySelector("#markEverythingMissing").addEventListener("click", () => {
     state.pantry.forEach((item) => {
       item.available = false;
-      addShoppingItem(item.name, "Produits manquants", "Produit manquant");
     });
+    saveLocalState();
+    renderApp();
+  });
+
+  document.querySelector("#reloadCatalog").addEventListener("click", () => {
+    state = ensurePantryCatalog(state);
     saveLocalState();
     renderApp();
   });
@@ -845,7 +924,9 @@ function setPantryItem(name, available) {
   state.pantry.push({
     id: createId(),
     name: cleanName,
-    available
+    category: "Ajouts personnels",
+    available,
+    catalog: false
   });
 }
 
@@ -861,7 +942,7 @@ function renderRecipes() {
   document.querySelector("#route-recipes").innerHTML = `
     <div class="section-heading">
       <div>
-        <span class="eyebrow">Idées pratiques</span>
+        <span class="eyebrow">IdÃ©es pratiques</span>
         <h1>Recettes</h1>
         <p>Des assemblages simples construits autour des portions du plan.</p>
       </div>
@@ -872,7 +953,7 @@ function renderRecipes() {
         <article class="recipe-card">
           <div class="recipe-image">${recipe.emoji}</div>
           <div class="recipe-body">
-            <div class="recipe-meta">${escapeHtml(recipe.tag)} · facile</div>
+            <div class="recipe-meta">${escapeHtml(recipe.tag)} Â· facile</div>
             <h3>${escapeHtml(recipe.title)}</h3>
             <p>${escapeHtml(recipe.description)}</p>
             <div class="button-row">
@@ -908,9 +989,9 @@ function openRecipe(recipeId) {
   document.querySelector("#recipeDialogTitle").textContent = recipe.title;
   document.querySelector("#recipeDialogDescription").textContent = recipe.description;
   document.querySelector("#recipeDialogContent").innerHTML = `
-    <h3>Ingrédients</h3>
+    <h3>IngrÃ©dients</h3>
     <ul>${recipe.ingredients.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
-    <h3>Préparation</h3>
+    <h3>PrÃ©paration</h3>
     <ol>${recipe.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}</ol>
   `;
   document.querySelector("#recipeDialog").showModal();
@@ -919,7 +1000,7 @@ function openRecipe(recipeId) {
 function renderEmpty(message) {
   return `
     <div class="empty-state">
-      <span>✦</span>
+      <span>âœ¦</span>
       <h3>Rien ici pour le moment</h3>
       <p>${escapeHtml(message)}</p>
     </div>
@@ -936,23 +1017,23 @@ function renderSyncStatus(status) {
   }
 
   if (!currentUser) {
-    indicator.textContent = "Non connecté";
+    indicator.textContent = "Non connectÃ©";
     return;
   }
 
   if (status === "syncing") {
-    indicator.textContent = "Synchronisation…";
+    indicator.textContent = "Synchronisationâ€¦";
     indicator.classList.add("pending");
     return;
   }
 
   if (localStorage.getItem(SYNC_QUEUE_KEY)) {
-    indicator.textContent = "À synchroniser";
+    indicator.textContent = "Ã€ synchroniser";
     indicator.classList.add("pending");
     return;
   }
 
-  indicator.textContent = "Synchronisé";
+  indicator.textContent = "SynchronisÃ©";
   indicator.classList.add("synced");
 }
 
@@ -995,7 +1076,7 @@ async function pullState() {
     .maybeSingle();
 
   if (error) {
-    console.error("Erreur de récupération :", error);
+    console.error("Erreur de rÃ©cupÃ©ration :", error);
     renderSyncStatus();
     return;
   }
@@ -1009,7 +1090,7 @@ async function pullState() {
   const localTime = new Date(state.updatedAt || 0).getTime();
 
   if (remoteTime > localTime || !localStorage.getItem(SYNC_QUEUE_KEY)) {
-    state = data.state;
+    state = ensurePantryCatalog(data.state);
     saveLocalState({ queueSync: false });
     localStorage.removeItem(SYNC_QUEUE_KEY);
   } else {
@@ -1049,14 +1130,14 @@ function renderAccount() {
 
   if (currentUser) {
     document.querySelector("#accountEmail").textContent = currentUser.email;
-    accountButton.textContent = currentUser.email?.slice(0, 1).toUpperCase() ?? "✓";
+    accountButton.textContent = currentUser.email?.slice(0, 1).toUpperCase() ?? "âœ“";
   } else {
     accountButton.textContent = "A";
   }
 
   if (!SUPABASE_READY) {
     document.querySelector("#authDescription").textContent =
-      "La synchronisation n’est pas encore configurée. Suis le README puis complète config.js.";
+      "La synchronisation nâ€™est pas encore configurÃ©e. Suis le README puis complÃ¨te config.js.";
     document.querySelector("#signInButton").disabled = true;
     document.querySelector("#signUpButton").disabled = true;
   }
@@ -1083,7 +1164,7 @@ async function signUp() {
     return;
   }
 
-  setAuthMessage("Compte créé. Vérifie ton e-mail si la confirmation est activée.", true);
+  setAuthMessage("Compte crÃ©Ã©. VÃ©rifie ton e-mail si la confirmation est activÃ©e.", true);
 }
 
 function setAuthMessage(message, success = false) {
@@ -1149,7 +1230,7 @@ async function registerServiceWorker() {
     try {
       await navigator.serviceWorker.register("./service-worker.js");
     } catch (error) {
-      console.error("Service worker non enregistré :", error);
+      console.error("Service worker non enregistrÃ© :", error);
     }
   }
 }
