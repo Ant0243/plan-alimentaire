@@ -1,4 +1,4 @@
-const CACHE_NAME = "meal-organizer-v2";
+const CACHE_NAME = "meal-organizer-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -35,6 +35,15 @@ self.addEventListener("fetch", (event) => {
           if (response.ok && new URL(event.request.url).origin === self.location.origin) {
             const clone = response.clone();
             caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() => cached);
+
+      return cached || network;
+    })
+  );
+});            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
           }
           return response;
         })
