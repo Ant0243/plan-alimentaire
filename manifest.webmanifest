@@ -1,0 +1,41 @@
+{
+  "name": "Mon plan alimentaire",
+  "short_name": "Mon plan",
+  "description": "Planning alimentaire hebdomadaire, garde-manger et liste de courses synchronisée.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f1e9",
+  "theme_color": "#18231c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Liste de courses",
+      "short_name": "Courses",
+      "url": "./#shopping"
+    },
+    {
+      "name": "Planning de la semaine",
+      "short_name": "Semaine",
+      "url": "./#week"
+    }
+  ]
+}
